@@ -1,0 +1,48 @@
+sort1 uses: Bubble
+- time ./sort1 sorted5000.txt  = 0.010s
+- time ./sort1 sorted10000.txt = 0.058s
+- time ./sort1 sorted50000.txt = 10.277s
+
+- time ./sort1 random5000.txt  = 0.093s
+- time ./sort1 random10000.txt = 0.516s
+- time ./sort1 random50000.txt = 42.125s
+
+- time ./sort1 reversed5000.txt  = 0.066s
+- time ./sort1 reversed10000.txt = 0.387s
+- time ./sort1 reversed50000.txt = 20.391s
+
+How do you know?:
+Looking to 50000.txt, there are a big range between the sorted one and the other two.
+That's it, a big range between randomed.txt -O(n^2)- and sorted.txt -omega(n)-.
+
+sort2 uses: Merge
+- time ./sort2 sorted5000.txt  = 0.012s
+- time ./sort2 sorted10000.txt = 0.024s
+- time ./sort2 sorted50000.txt = 11.685s
+
+- time ./sort2 random5000.txt  = 0.014s
+- time ./sort2 random10000.txt = 0.087s
+- time ./sort2 random50000.txt = 6.679s
+
+- time ./sort2 reversed5000.txt  = 0.016s
+- time ./sort2 reversed10000.txt = 0.085s
+- time ./sort2 reversed50000.txt = 6.463s
+
+How do you know?:
+This Sort takes the least time compared to the other two sorts. Hence, it must be nlog(n) running time.
+
+sort3 uses: Selection
+- time ./sort3 sorted5000.txt  = 0.038s
+- time ./sort3 sorted10000.txt = 0.206s
+- time ./sort3 sorted50000.txt = 12.186s
+
+- time ./sort3 random5000.txt  = 0.034s
+- time ./sort3 random10000.txt = 0.239s
+- time ./sort3 random50000.txt = 19.690s
+
+- time ./sort3 reversed5000.txt  = 0.033s
+- time ./sort3 reversed10000.txt = 0.221s
+- time ./sort3 reversed50000.txt = 18.092s
+
+How do you know?:
+This sort takes nearly the same time whether the array is sorted, randomed or reversed.
